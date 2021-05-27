@@ -1,0 +1,29 @@
+.wrapper {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.topNav {
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: 60px;
+	border-bottom: 1px solid #cccccc;
+	display: grid;
+	grid-template-columns: 1fr auto auto;
+	align-items: center;
+	grid-gap: 15px;
+	padding: 0 10px 0 0;
+}
+
+.body {
+	flex: 1;
+	border-bottom: 1px solid #cccccc;
+}
+
+.footer {
+	flex: 1;
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: 60px;
+}

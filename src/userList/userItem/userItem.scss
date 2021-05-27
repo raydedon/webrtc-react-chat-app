@@ -1,0 +1,16 @@
+.container {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	border-top: 1px solid #cccccc;
+	padding: 10px;
+	grid-gap: 10px;
+	align-items: center;
+}
+
+.imageThumbnail {
+	flex: 1
+}
+
+.userInfo {
+	flex: 2
+}

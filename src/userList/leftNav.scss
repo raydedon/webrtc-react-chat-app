@@ -1,0 +1,21 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+
+.selfProfileNav {
+	display: flex;
+	justify-items: flex-start;
+	align-items: center;
+	flex-basis: 60px;
+	border: 1px solid #cccccc;
+	padding: 0 10px;
+}
+
+.userListWrapper {
+	border: 1px solid #cccccc;
+	border-top-width: 0;
+	flex: 1;
+}

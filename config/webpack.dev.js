@@ -30,7 +30,9 @@ module.exports = merge(common, {
           'style-loader',
           {
             loader: 'css-loader',
-            options: { sourceMap: true, importLoaders: 1, modules: true },
+            options: { sourceMap: true, importLoaders: 1, modules: {
+                localIdentName: '[name]__[local]___[hash:base64:5]'
+              } },
           },
           { loader: 'postcss-loader', options: { sourceMap: true } },
           { loader: 'sass-loader', options: { sourceMap: true } },
