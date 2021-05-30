@@ -3,12 +3,12 @@ import UserItem from './userItem/UserItem'
 import classes from './userList.scss'
 import { useSelector } from 'react-redux'
 
-const UserList = () => {
+const UserList = (props) => {
     const users = useSelector((state) => state.userInfo.users) ?? [];
 
     return (
         <div className={classes.container}>
-            {users.map(user => <UserItem key={user.id} user={user}/>)}
+            {users.map(user => <UserItem key={user.userName} user={user} {...props}/>)}
         </div>
     )
 }

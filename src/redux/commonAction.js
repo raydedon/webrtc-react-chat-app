@@ -1,15 +1,29 @@
 export const SET_YOUR_SELF = 'SET_YOUR_SELF';
 export const SET_USER_LIST = 'SET_USER_LIST';
+export const SET_CURRENTLY_ACTIVE_PARTNER = 'SET_CURRENTLY_ACTIVE_PARTNER';
+export const SET_COMMUNICATION_PARTNER = 'SET_COMMUNICATION_PARTNER';
+export const RESET_COMMUNICATION_PARTNER = 'RESET_COMMUNICATION_PARTNER';
+export const SET_CALL_TYPE = 'SET_CALL_TYPE';
+export const SET_USER_BUSY_ON_CALL = 'SET_USER_BUSY_ON_CALL';
+export const RESET_USER_BUSY_ON_CALL = 'RESET_USER_BUSY_ON_CALL';
+export const SET_RECEIVING_CALL_REQUEST = 'SET_RECEIVING_CALL_REQUEST';
+export const RESET_RECEIVING_CALL_REQUEST = 'RESET_RECEIVING_CALL_REQUEST';
+export const SET_RECEIVING_CALL_FROM_USER = 'SET_RECEIVING_CALL_FROM_USER';
+export const RESET_RECEIVING_CALL_FROM_USER = 'RESET_RECEIVING_CALL_FROM_USER';
+export const SET_RECEIVING_CALL_FROM_CALLER_USERS_SDP = 'SET_RECEIVING_CALL_FROM_CALLER_USERS_SDP';
+export const RESET_RECEIVING_CALL_FROM_CALLER_USERS_SDP = 'RESET_RECEIVING_CALL_FROM_CALLER_USERS_SDP';
 
-export const setYourSelf = (id, name) => ({
+export const setYourSelf = (user) => ({
     type: SET_YOUR_SELF,
-    payload: {
-        id,
-        name
-    }
+    payload: { user }
 });
 
 export const setUserList = (users) => ({
     type: SET_USER_LIST,
     payload: {users}
+});
+
+export const setCurrentlyActivePartnerUserId = (userName) => ({
+    type: SET_CURRENTLY_ACTIVE_PARTNER,
+    payload: {userName}
 });

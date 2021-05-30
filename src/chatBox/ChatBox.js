@@ -4,17 +4,33 @@ import UserItem from '../userList/userItem/UserItem'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhoneAlt, faVideo } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+    OUTGOING,
+    setCallType,
+    setCommunicationPartnerUserId,
+} from '../call/callActions'
 
 const ChatBox = () => {
-    const activeUser = {name: 'Soma Nayek'};
+    const dispatch = useDispatch();
+    const currentlyActivePartnerUserId = useSelector((state) => state.userInfo.currentlyActivePartnerUserId) ?? '';
+    const users = useSelector((state) => state.userInfo.users) ?? [];
+    
+    const currentlyActivePartnerUser = React.useMemo(() => users.find((user) => user.userName === currentlyActivePartnerUserId), [currentlyActivePartnerUserId])
+
+    const setCommunicationPartnerUser = React.useCallback(() => {
+        dispatch(setCommunicationPartnerUserId(currentlyActivePartnerUserId));
+        dispatch(setCallType(OUTGOING));
+    }, [currentlyActivePartnerUserId]);
+    
     return (
         <div className={classes.wrapper}>
             <div className={classes.topNav}>
-                <UserItem user={activeUser} size={40}/>
-                <Link to='/call'>
+                <UserItem user={currentlyActivePartnerUser} size={40}/>
+                <Link to='/call' onClick={setCommunicationPartnerUser}>
                     <FontAwesomeIcon icon={faVideo} size='1x'/>
                 </Link>
-                <Link to='/call'>
+                <Link to='/call' onClick={setCommunicationPartnerUser}>
                     <FontAwesomeIcon icon={faPhoneAlt} size='1x' />
                 </Link>
             </div>
