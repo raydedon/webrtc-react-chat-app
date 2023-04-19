@@ -1,2 +1,2 @@
 #! /bin/sh
-npm run static-run -- -p 5001
+npm run static-run -- -p 3011

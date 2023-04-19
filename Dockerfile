@@ -13,6 +13,6 @@ COPY . ./
 
 RUN npm run build
 
-EXPOSE 5001
+EXPOSE 3011
 
 CMD ["/bin/sh", "script.sh"]
