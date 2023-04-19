@@ -16,12 +16,12 @@ const ChatBox = () => {
     const currentlyActivePartnerUserId = useSelector((state) => state.userInfo.currentlyActivePartnerUserId) ?? '';
     const users = useSelector((state) => state.userInfo.users) ?? [];
     
-    const currentlyActivePartnerUser = React.useMemo(() => users.find((user) => user.userName === currentlyActivePartnerUserId), [currentlyActivePartnerUserId])
+    const currentlyActivePartnerUser = React.useMemo(() => users.find((user) => user.userName === currentlyActivePartnerUserId), [])
 
     const setCommunicationPartnerUser = React.useCallback(() => {
         dispatch(setCommunicationPartnerUserId(currentlyActivePartnerUserId));
         dispatch(setCallType(OUTGOING));
-    }, [currentlyActivePartnerUserId]);
+    }, [dispatch]);
     
     return (
         <div className={classes.wrapper}>

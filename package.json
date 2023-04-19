@@ -6,7 +6,10 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
-    "lint": "eslint src || true --fix"
+    "lint": "eslint src || true --fix",
+    "static-run": "http-server ./dist/",
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "author": "",
   "license": "ISC",
@@ -49,6 +52,7 @@
     "fakerator": "^0.3.3",
     "history": "^4.10.1",
     "howler": "^2.2.1",
+    "http-server": "^14.1.1",
     "path": "^0.12.7",
     "random-name": "^0.1.2",
     "react": "^17.0.2",
